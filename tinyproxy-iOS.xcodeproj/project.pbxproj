@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E7CFCDF1E24F0A400F87DC9 /* acl.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCAA1E24F0A400F87DC9 /* acl.c */; };
+		7E7CFCE01E24F0A400F87DC9 /* anonymous.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCAC1E24F0A400F87DC9 /* anonymous.c */; };
+		7E7CFCE11E24F0A400F87DC9 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCAE1E24F0A400F87DC9 /* buffer.c */; };
+		7E7CFCE21E24F0A400F87DC9 /* child.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCB01E24F0A400F87DC9 /* child.c */; };
+		7E7CFCE31E24F0A400F87DC9 /* conf.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCB31E24F0A400F87DC9 /* conf.c */; };
+		7E7CFCE41E24F0A400F87DC9 /* connect-ports.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCB51E24F0A400F87DC9 /* connect-ports.c */; };
+		7E7CFCE51E24F0A400F87DC9 /* conns.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCB71E24F0A400F87DC9 /* conns.c */; };
+		7E7CFCE61E24F0A400F87DC9 /* daemon.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCB91E24F0A400F87DC9 /* daemon.c */; };
+		7E7CFCE71E24F0A400F87DC9 /* filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCBB1E24F0A400F87DC9 /* filter.c */; };
+		7E7CFCE81E24F0A400F87DC9 /* hashmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCBD1E24F0A400F87DC9 /* hashmap.c */; };
+		7E7CFCE91E24F0A400F87DC9 /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCBF1E24F0A400F87DC9 /* heap.c */; };
+		7E7CFCEA1E24F0A400F87DC9 /* html-error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCC11E24F0A400F87DC9 /* html-error.c */; };
+		7E7CFCEB1E24F0A400F87DC9 /* http-message.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCC31E24F0A400F87DC9 /* http-message.c */; };
+		7E7CFCEC1E24F0A400F87DC9 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCC51E24F0A400F87DC9 /* log.c */; };
+		7E7CFCED1E24F0A400F87DC9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCC71E24F0A400F87DC9 /* main.c */; };
+		7E7CFCEE1E24F0A400F87DC9 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCCB1E24F0A400F87DC9 /* network.c */; };
+		7E7CFCEF1E24F0A400F87DC9 /* reqs.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCCD1E24F0A400F87DC9 /* reqs.c */; };
+		7E7CFCF01E24F0A400F87DC9 /* reverse-proxy.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCCF1E24F0A400F87DC9 /* reverse-proxy.c */; };
+		7E7CFCF11E24F0A400F87DC9 /* sock.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCD11E24F0A400F87DC9 /* sock.c */; };
+		7E7CFCF21E24F0A400F87DC9 /* stats.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCD31E24F0A400F87DC9 /* stats.c */; };
+		7E7CFCF31E24F0A400F87DC9 /* text.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCD51E24F0A400F87DC9 /* text.c */; };
+		7E7CFCF41E24F0A400F87DC9 /* transparent-proxy.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCD71E24F0A400F87DC9 /* transparent-proxy.c */; };
+		7E7CFCF51E24F0A400F87DC9 /* upstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCD91E24F0A400F87DC9 /* upstream.c */; };
+		7E7CFCF61E24F0A400F87DC9 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCDB1E24F0A400F87DC9 /* utils.c */; };
+		7E7CFCF71E24F0A400F87DC9 /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CFCDD1E24F0A400F87DC9 /* vector.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E7CFC9B1E24EF1500F87DC9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E7CFC9D1E24EF1500F87DC9 /* libtinyproxy-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libtinyproxy-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7CFCAA1E24F0A400F87DC9 /* acl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = acl.c; sourceTree = "<group>"; };
+		7E7CFCAB1E24F0A400F87DC9 /* acl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acl.h; sourceTree = "<group>"; };
+		7E7CFCAC1E24F0A400F87DC9 /* anonymous.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = anonymous.c; sourceTree = "<group>"; };
+		7E7CFCAD1E24F0A400F87DC9 /* anonymous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = anonymous.h; sourceTree = "<group>"; };
+		7E7CFCAE1E24F0A400F87DC9 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		7E7CFCAF1E24F0A400F87DC9 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		7E7CFCB01E24F0A400F87DC9 /* child.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = child.c; sourceTree = "<group>"; };
+		7E7CFCB11E24F0A400F87DC9 /* child.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = child.h; sourceTree = "<group>"; };
+		7E7CFCB21E24F0A400F87DC9 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		7E7CFCB31E24F0A400F87DC9 /* conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = conf.c; sourceTree = "<group>"; };
+		7E7CFCB41E24F0A400F87DC9 /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
+		7E7CFCB51E24F0A400F87DC9 /* connect-ports.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "connect-ports.c"; sourceTree = "<group>"; };
+		7E7CFCB61E24F0A400F87DC9 /* connect-ports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "connect-ports.h"; sourceTree = "<group>"; };
+		7E7CFCB71E24F0A400F87DC9 /* conns.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = conns.c; sourceTree = "<group>"; };
+		7E7CFCB81E24F0A400F87DC9 /* conns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conns.h; sourceTree = "<group>"; };
+		7E7CFCB91E24F0A400F87DC9 /* daemon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = daemon.c; sourceTree = "<group>"; };
+		7E7CFCBA1E24F0A400F87DC9 /* daemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = daemon.h; sourceTree = "<group>"; };
+		7E7CFCBB1E24F0A400F87DC9 /* filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = filter.c; sourceTree = "<group>"; };
+		7E7CFCBC1E24F0A400F87DC9 /* filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filter.h; sourceTree = "<group>"; };
+		7E7CFCBD1E24F0A400F87DC9 /* hashmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashmap.c; sourceTree = "<group>"; };
+		7E7CFCBE1E24F0A400F87DC9 /* hashmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashmap.h; sourceTree = "<group>"; };
+		7E7CFCBF1E24F0A400F87DC9 /* heap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = heap.c; sourceTree = "<group>"; };
+		7E7CFCC01E24F0A400F87DC9 /* heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heap.h; sourceTree = "<group>"; };
+		7E7CFCC11E24F0A400F87DC9 /* html-error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "html-error.c"; sourceTree = "<group>"; };
+		7E7CFCC21E24F0A400F87DC9 /* html-error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "html-error.h"; sourceTree = "<group>"; };
+		7E7CFCC31E24F0A400F87DC9 /* http-message.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "http-message.c"; sourceTree = "<group>"; };
+		7E7CFCC41E24F0A400F87DC9 /* http-message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "http-message.h"; sourceTree = "<group>"; };
+		7E7CFCC51E24F0A400F87DC9 /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = log.c; sourceTree = "<group>"; };
+		7E7CFCC61E24F0A400F87DC9 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		7E7CFCC71E24F0A400F87DC9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		7E7CFCC81E24F0A400F87DC9 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		7E7CFCC91E24F0A400F87DC9 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		7E7CFCCA1E24F0A400F87DC9 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		7E7CFCCB1E24F0A400F87DC9 /* network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
+		7E7CFCCC1E24F0A400F87DC9 /* network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
+		7E7CFCCD1E24F0A400F87DC9 /* reqs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = reqs.c; sourceTree = "<group>"; };
+		7E7CFCCE1E24F0A400F87DC9 /* reqs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reqs.h; sourceTree = "<group>"; };
+		7E7CFCCF1E24F0A400F87DC9 /* reverse-proxy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "reverse-proxy.c"; sourceTree = "<group>"; };
+		7E7CFCD01E24F0A400F87DC9 /* reverse-proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "reverse-proxy.h"; sourceTree = "<group>"; };
+		7E7CFCD11E24F0A400F87DC9 /* sock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sock.c; sourceTree = "<group>"; };
+		7E7CFCD21E24F0A400F87DC9 /* sock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sock.h; sourceTree = "<group>"; };
+		7E7CFCD31E24F0A400F87DC9 /* stats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stats.c; sourceTree = "<group>"; };
+		7E7CFCD41E24F0A400F87DC9 /* stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stats.h; sourceTree = "<group>"; };
+		7E7CFCD51E24F0A400F87DC9 /* text.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = text.c; sourceTree = "<group>"; };
+		7E7CFCD61E24F0A400F87DC9 /* text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = text.h; sourceTree = "<group>"; };
+		7E7CFCD71E24F0A400F87DC9 /* transparent-proxy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "transparent-proxy.c"; sourceTree = "<group>"; };
+		7E7CFCD81E24F0A400F87DC9 /* transparent-proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "transparent-proxy.h"; sourceTree = "<group>"; };
+		7E7CFCD91E24F0A400F87DC9 /* upstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upstream.c; sourceTree = "<group>"; };
+		7E7CFCDA1E24F0A400F87DC9 /* upstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = upstream.h; sourceTree = "<group>"; };
+		7E7CFCDB1E24F0A400F87DC9 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		7E7CFCDC1E24F0A400F87DC9 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		7E7CFCDD1E24F0A400F87DC9 /* vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector.c; sourceTree = "<group>"; };
+		7E7CFCDE1E24F0A400F87DC9 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E7CFC9A1E24EF1500F87DC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E7CFC941E24EF1500F87DC9 = {
+			isa = PBXGroup;
+			children = (
+				7E7CFCA91E24F0A400F87DC9 /* tinyproxy */,
+				7E7CFC9E1E24EF1500F87DC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E7CFC9E1E24EF1500F87DC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E7CFC9D1E24EF1500F87DC9 /* libtinyproxy-iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E7CFCA91E24F0A400F87DC9 /* tinyproxy */ = {
+			isa = PBXGroup;
+			children = (
+				7E7CFCAA1E24F0A400F87DC9 /* acl.c */,
+				7E7CFCAB1E24F0A400F87DC9 /* acl.h */,
+				7E7CFCAC1E24F0A400F87DC9 /* anonymous.c */,
+				7E7CFCAD1E24F0A400F87DC9 /* anonymous.h */,
+				7E7CFCAE1E24F0A400F87DC9 /* buffer.c */,
+				7E7CFCAF1E24F0A400F87DC9 /* buffer.h */,
+				7E7CFCB01E24F0A400F87DC9 /* child.c */,
+				7E7CFCB11E24F0A400F87DC9 /* child.h */,
+				7E7CFCB21E24F0A400F87DC9 /* common.h */,
+				7E7CFCB31E24F0A400F87DC9 /* conf.c */,
+				7E7CFCB41E24F0A400F87DC9 /* conf.h */,
+				7E7CFCB51E24F0A400F87DC9 /* connect-ports.c */,
+				7E7CFCB61E24F0A400F87DC9 /* connect-ports.h */,
+				7E7CFCB71E24F0A400F87DC9 /* conns.c */,
+				7E7CFCB81E24F0A400F87DC9 /* conns.h */,
+				7E7CFCB91E24F0A400F87DC9 /* daemon.c */,
+				7E7CFCBA1E24F0A400F87DC9 /* daemon.h */,
+				7E7CFCBB1E24F0A400F87DC9 /* filter.c */,
+				7E7CFCBC1E24F0A400F87DC9 /* filter.h */,
+				7E7CFCBD1E24F0A400F87DC9 /* hashmap.c */,
+				7E7CFCBE1E24F0A400F87DC9 /* hashmap.h */,
+				7E7CFCBF1E24F0A400F87DC9 /* heap.c */,
+				7E7CFCC01E24F0A400F87DC9 /* heap.h */,
+				7E7CFCC11E24F0A400F87DC9 /* html-error.c */,
+				7E7CFCC21E24F0A400F87DC9 /* html-error.h */,
+				7E7CFCC31E24F0A400F87DC9 /* http-message.c */,
+				7E7CFCC41E24F0A400F87DC9 /* http-message.h */,
+				7E7CFCC51E24F0A400F87DC9 /* log.c */,
+				7E7CFCC61E24F0A400F87DC9 /* log.h */,
+				7E7CFCC71E24F0A400F87DC9 /* main.c */,
+				7E7CFCC81E24F0A400F87DC9 /* main.h */,
+				7E7CFCC91E24F0A400F87DC9 /* Makefile.am */,
+				7E7CFCCA1E24F0A400F87DC9 /* Makefile.in */,
+				7E7CFCCB1E24F0A400F87DC9 /* network.c */,
+				7E7CFCCC1E24F0A400F87DC9 /* network.h */,
+				7E7CFCCD1E24F0A400F87DC9 /* reqs.c */,
+				7E7CFCCE1E24F0A400F87DC9 /* reqs.h */,
+				7E7CFCCF1E24F0A400F87DC9 /* reverse-proxy.c */,
+				7E7CFCD01E24F0A400F87DC9 /* reverse-proxy.h */,
+				7E7CFCD11E24F0A400F87DC9 /* sock.c */,
+				7E7CFCD21E24F0A400F87DC9 /* sock.h */,
+				7E7CFCD31E24F0A400F87DC9 /* stats.c */,
+				7E7CFCD41E24F0A400F87DC9 /* stats.h */,
+				7E7CFCD51E24F0A400F87DC9 /* text.c */,
+				7E7CFCD61E24F0A400F87DC9 /* text.h */,
+				7E7CFCD71E24F0A400F87DC9 /* transparent-proxy.c */,
+				7E7CFCD81E24F0A400F87DC9 /* transparent-proxy.h */,
+				7E7CFCD91E24F0A400F87DC9 /* upstream.c */,
+				7E7CFCDA1E24F0A400F87DC9 /* upstream.h */,
+				7E7CFCDB1E24F0A400F87DC9 /* utils.c */,
+				7E7CFCDC1E24F0A400F87DC9 /* utils.h */,
+				7E7CFCDD1E24F0A400F87DC9 /* vector.c */,
+				7E7CFCDE1E24F0A400F87DC9 /* vector.h */,
+			);
+			path = tinyproxy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E7CFC9C1E24EF1500F87DC9 /* tinyproxy-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E7CFCA61E24EF1500F87DC9 /* Build configuration list for PBXNativeTarget "tinyproxy-iOS" */;
+			buildPhases = (
+				7E7CFC991E24EF1500F87DC9 /* Sources */,
+				7E7CFC9A1E24EF1500F87DC9 /* Frameworks */,
+				7E7CFC9B1E24EF1500F87DC9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tinyproxy-iOS";
+			productName = "tinyproxy-iOS";
+			productReference = 7E7CFC9D1E24EF1500F87DC9 /* libtinyproxy-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E7CFC951E24EF1500F87DC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = lidahe;
+				TargetAttributes = {
+					7E7CFC9C1E24EF1500F87DC9 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7E7CFC981E24EF1500F87DC9 /* Build configuration list for PBXProject "tinyproxy-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7E7CFC941E24EF1500F87DC9;
+			productRefGroup = 7E7CFC9E1E24EF1500F87DC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E7CFC9C1E24EF1500F87DC9 /* tinyproxy-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E7CFC991E24EF1500F87DC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7CFCE81E24F0A400F87DC9 /* hashmap.c in Sources */,
+				7E7CFCE31E24F0A400F87DC9 /* conf.c in Sources */,
+				7E7CFCF51E24F0A400F87DC9 /* upstream.c in Sources */,
+				7E7CFCEF1E24F0A400F87DC9 /* reqs.c in Sources */,
+				7E7CFCE41E24F0A400F87DC9 /* connect-ports.c in Sources */,
+				7E7CFCE21E24F0A400F87DC9 /* child.c in Sources */,
+				7E7CFCF31E24F0A400F87DC9 /* text.c in Sources */,
+				7E7CFCEE1E24F0A400F87DC9 /* network.c in Sources */,
+				7E7CFCF41E24F0A400F87DC9 /* transparent-proxy.c in Sources */,
+				7E7CFCF61E24F0A400F87DC9 /* utils.c in Sources */,
+				7E7CFCEC1E24F0A400F87DC9 /* log.c in Sources */,
+				7E7CFCF21E24F0A400F87DC9 /* stats.c in Sources */,
+				7E7CFCED1E24F0A400F87DC9 /* main.c in Sources */,
+				7E7CFCE51E24F0A400F87DC9 /* conns.c in Sources */,
+				7E7CFCF01E24F0A400F87DC9 /* reverse-proxy.c in Sources */,
+				7E7CFCF11E24F0A400F87DC9 /* sock.c in Sources */,
+				7E7CFCEB1E24F0A400F87DC9 /* http-message.c in Sources */,
+				7E7CFCEA1E24F0A400F87DC9 /* html-error.c in Sources */,
+				7E7CFCE71E24F0A400F87DC9 /* filter.c in Sources */,
+				7E7CFCDF1E24F0A400F87DC9 /* acl.c in Sources */,
+				7E7CFCE61E24F0A400F87DC9 /* daemon.c in Sources */,
+				7E7CFCE91E24F0A400F87DC9 /* heap.c in Sources */,
+				7E7CFCE11E24F0A400F87DC9 /* buffer.c in Sources */,
+				7E7CFCF71E24F0A400F87DC9 /* vector.c in Sources */,
+				7E7CFCE01E24F0A400F87DC9 /* anonymous.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7E7CFCA41E24EF1500F87DC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E7CFCA51E24EF1500F87DC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E7CFCA71E24EF1500F87DC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7E7CFCA81E24EF1500F87DC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E7CFC981E24EF1500F87DC9 /* Build configuration list for PBXProject "tinyproxy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7CFCA41E24EF1500F87DC9 /* Debug */,
+				7E7CFCA51E24EF1500F87DC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E7CFCA61E24EF1500F87DC9 /* Build configuration list for PBXNativeTarget "tinyproxy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7CFCA71E24EF1500F87DC9 /* Debug */,
+				7E7CFCA81E24EF1500F87DC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E7CFC951E24EF1500F87DC9 /* Project object */;
+}
