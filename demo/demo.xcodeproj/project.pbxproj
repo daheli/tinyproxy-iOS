@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0C22711E26426F00E8180B /* tinyproxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0C226F1E26426F00E8180B /* tinyproxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EED6EC81E262FD400B50C75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EC71E262FD400B50C75 /* main.m */; };
 		7EED6ECB1E262FD400B50C75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6ECA1E262FD400B50C75 /* AppDelegate.m */; };
 		7EED6ECE1E262FD400B50C75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6ECD1E262FD400B50C75 /* ViewController.m */; };
 		7EED6ED11E262FD400B50C75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EED6ECF1E262FD400B50C75 /* Main.storyboard */; };
 		7EED6ED31E262FD400B50C75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EED6ED21E262FD400B50C75 /* Assets.xcassets */; };
 		7EED6ED61E262FD400B50C75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EED6ED41E262FD400B50C75 /* LaunchScreen.storyboard */; };
-		7EED6F991E26327100B50C75 /* libtinyproxy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EED6F981E26327100B50C75 /* libtinyproxy.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7E0C22721E26426F00E8180B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E0C22711E26426F00E8180B /* tinyproxy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7E0C226F1E26426F00E8180B /* tinyproxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = tinyproxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EED6EC31E262FD400B50C75 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EED6EC71E262FD400B50C75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EED6EC91E262FD400B50C75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,8 +42,6 @@
 		7EED6ED21E262FD400B50C75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EED6ED51E262FD400B50C75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EED6ED71E262FD400B50C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EED6F981E26327100B50C75 /* libtinyproxy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtinyproxy.a; path = "../tinyproxy/build/Debug-iphoneos/libtinyproxy.a"; sourceTree = "<group>"; };
-		7EED6F9A1E2632E400B50C75 /* tinyproxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyproxy.h; path = ../../tinyproxy/tinyproxy/tinyproxy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EED6F991E26327100B50C75 /* libtinyproxy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +75,6 @@
 		7EED6EC51E262FD400B50C75 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				7EED6F9A1E2632E400B50C75 /* tinyproxy.h */,
 				7EED6EC91E262FD400B50C75 /* AppDelegate.h */,
 				7EED6ECA1E262FD400B50C75 /* AppDelegate.m */,
 				7EED6ECC1E262FD400B50C75 /* ViewController.h */,
@@ -88,7 +99,7 @@
 		7EED6F971E26327100B50C75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EED6F981E26327100B50C75 /* libtinyproxy.a */,
+				7E0C226F1E26426F00E8180B /* tinyproxy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 				7EED6EBF1E262FD400B50C75 /* Sources */,
 				7EED6EC01E262FD400B50C75 /* Frameworks */,
 				7EED6EC11E262FD400B50C75 /* Resources */,
+				7E0C22721E26426F00E8180B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

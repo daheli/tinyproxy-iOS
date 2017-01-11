@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "tinyproxy.h"
+#import <tinyproxy/tinyproxy.h>
+
 
 
 @interface ViewController ()
