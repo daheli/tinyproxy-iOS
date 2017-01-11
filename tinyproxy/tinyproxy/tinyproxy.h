@@ -8,3 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
+extern int tinyproxy_main();

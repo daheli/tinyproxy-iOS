@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "main.h"
+#import "tinyproxy.h"
+
 
 @interface ViewController ()
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    tinyproxy_main();
 }
 
 

@@ -33,5 +33,6 @@ extern struct config_s config;
 extern unsigned int received_sighup;    /* boolean */
 
 extern int reload_config (void);
+extern int tp_main (int argc, char **argv);
 
 #endif /* __MAIN_H__ */

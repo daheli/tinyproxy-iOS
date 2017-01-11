@@ -363,7 +363,7 @@ done:
 }
 
 int
-main (int argc, char **argv)
+tp_main (int argc, char **argv)
 {
         /* Only allow u+rw bits. This may be required for some versions
          * of glibc so that mkstemp() doesn't make us vulnerable.
