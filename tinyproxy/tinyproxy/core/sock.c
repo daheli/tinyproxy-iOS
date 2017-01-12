@@ -189,12 +189,18 @@ static int listen_on_one_socket(struct addrinfo *ad)
                     "socktype[%d], proto[%d]", numerichost,
                     ad->ai_family, ad->ai_socktype, ad->ai_protocol);
 
-        listenfd = socket(ad->ai_family, ad->ai_socktype, ad->ai_protocol);
+//        listenfd = socket(ad->ai_family, ad->ai_socktype, ad->ai_protocol);
+    listenfd = socket(AF_INET, SOCK_STREAM, 0);
         if (listenfd == -1) {
                 log_message(LOG_ERR, "socket() failed: %s", strerror(errno));
                 return -1;
         }
-
+    
+    struct sockaddr_in si;
+    si.sin_family = AF_INET;
+    si.sin_port = htons(8888);
+    si.sin_addr.s_addr = inet_addr("0.0.0.0");
+    socklen_t sl = sizeof(si);
         ret = setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
         if (ret != 0) {
                 log_message(LOG_ERR,
@@ -204,21 +210,23 @@ static int listen_on_one_socket(struct addrinfo *ad)
                 return -1;
         }
 
-        if (ad->ai_family == AF_INET6) {
-                ret = setsockopt(listenfd, IPPROTO_IPV6, IPV6_V6ONLY, &on,
-                                 sizeof(on));
-                if (ret != 0) {
-                        log_message(LOG_ERR,
-                                    "setsockopt failed to set IPV6_V6ONLY: %s",
-                                    strerror(errno));
-                        close(listenfd);
-                        return -1;
-                }
-        }
+//        if (ad->ai_family == AF_INET6) {
+//                ret = setsockopt(listenfd, IPPROTO_IPV6, IPV6_V6ONLY, &on,
+//                                 sizeof(on));
+//                if (ret != 0) {
+//                        log_message(LOG_ERR,
+//                                    "setsockopt failed to set IPV6_V6ONLY: %s",
+//                                    strerror(errno));
+//                        close(listenfd);
+//                        return -1;
+//                }
+//        }
 
-        ret = bind(listenfd, ad->ai_addr, ad->ai_addrlen);
+    ret = bind(listenfd, (struct sockaddr*)&si, sl);
+//        ret = bind(listenfd, ad->ai_addr, ad->ai_addrlen);
         if (ret != 0) {
                log_message(LOG_ERR, "bind failed: %s", strerror (errno));
+            
                close(listenfd);
                return -1;
         }

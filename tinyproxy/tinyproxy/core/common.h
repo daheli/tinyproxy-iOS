@@ -28,6 +28,8 @@
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #endif
+#include "TargetConditionals.h"
+
 
 /*
  * Include standard headers which are used through-out tinyproxy

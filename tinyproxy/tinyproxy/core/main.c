@@ -323,12 +323,12 @@ static void initialize_config_defaults (struct config_s *conf)
 {
         memset (conf, 0, sizeof(*conf));
 
-//        conf->config_file = safestrdup (SYSCONFDIR "/tinyproxy.conf");
+        conf->config_file = safestrdup (SYSCONF);
         if (!conf->config_file) {
                 fprintf (stderr, PACKAGE ": Could not allocate memory.\n");
                 exit (EX_SOFTWARE);
         }
-        conf->godaemon = TRUE;
+        conf->godaemon = FALSE;
         /*
          * Make sure the HTML error pages array is NULL to begin with.
          * (FIXME: Should have a better API for all this)
@@ -336,8 +336,8 @@ static void initialize_config_defaults (struct config_s *conf)
         conf->errorpages = NULL;
         conf->stathost = safestrdup (TINYPROXY_STATHOST);
         conf->idletimeout = MAX_IDLE_TIME;
-//        conf->logf_name = safestrdup (LOCALSTATEDIR "/log/tinyproxy/tinyproxy.log");
-//        conf->pidpath = safestrdup (LOCALSTATEDIR "/run/tinyproxy/tinyproxy.pid");
+        conf->logf_name = safestrdup (LOCALSTATE_LOG);
+        conf->pidpath = safestrdup (LOCALSTATE_RUN);
 }
 
 /**

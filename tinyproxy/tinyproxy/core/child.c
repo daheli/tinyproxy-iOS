@@ -273,9 +273,9 @@ static void child_main (struct child_s *ptr)
                  * We have a socket that is readable.
                  * Continue handling this connection.
                  */
-
+                SERVER_INC ();
                 connfd = accept (listenfd, cliaddr, &clilen);
-
+            
 #ifndef NDEBUG
                 /*
                  * Enable the TINYPROXY_DEBUG environment variable if you
@@ -304,6 +304,7 @@ static void child_main (struct child_s *ptr)
 
                 ptr->status = T_CONNECTED;
 
+                printf(stderr, "%s", servers_waiting);
                 SERVER_DEC ();
 
                 handle_connection (connfd);
@@ -355,8 +356,12 @@ static pid_t child_make (struct child_s *ptr)
 {
         pid_t pid;
 
+    #if TARGET_OS_IOS
+        pid = getpid();
+    #else
         if ((pid = fork ()) > 0)
-                return pid;     /* parent */
+            return pid;     /* parent */
+    #endif
 
         /*
          * Reset the SIGNALS so that the child can be reaped.

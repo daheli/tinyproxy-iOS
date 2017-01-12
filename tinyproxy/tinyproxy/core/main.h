@@ -28,6 +28,11 @@
 #define MAXBUFFSIZE     ((size_t)(1024 * 96))   /* Max size of buffer */
 #define MAX_IDLE_TIME   (60 * 10)       /* 10 minutes of no activity */
 
+extern char *SYSCONF;
+extern char *LOCALSTATE_LOG;
+extern char *LOCALSTATE_RUN;
+
+
 /* Global Structures used in the program */
 extern struct config_s config;
 extern unsigned int received_sighup;    /* boolean */

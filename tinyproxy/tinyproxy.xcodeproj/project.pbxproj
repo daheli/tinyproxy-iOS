@@ -40,7 +40,7 @@
 		7E0C222F1E2636CF00E8180B /* hashmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F01E2636CF00E8180B /* hashmap.h */; };
 		7E0C22301E2636CF00E8180B /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F11E2636CF00E8180B /* heap.c */; };
 		7E0C22311E2636CF00E8180B /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F11E2636CF00E8180B /* heap.c */; };
-		7E0C22321E2636CF00E8180B /* heap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F21E2636CF00E8180B /* heap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E0C22321E2636CF00E8180B /* heap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F21E2636CF00E8180B /* heap.h */; };
 		7E0C22331E2636CF00E8180B /* html-error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F31E2636CF00E8180B /* html-error.c */; };
 		7E0C22341E2636CF00E8180B /* html-error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F31E2636CF00E8180B /* html-error.c */; };
 		7E0C22351E2636CF00E8180B /* html-error.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F41E2636CF00E8180B /* html-error.h */; };
@@ -52,7 +52,7 @@
 		7E0C223B1E2636CF00E8180B /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F81E2636CF00E8180B /* log.h */; };
 		7E0C223C1E2636CF00E8180B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F91E2636CF00E8180B /* main.c */; };
 		7E0C223D1E2636CF00E8180B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F91E2636CF00E8180B /* main.c */; };
-		7E0C223E1E2636CF00E8180B /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FA1E2636CF00E8180B /* main.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E0C223E1E2636CF00E8180B /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FA1E2636CF00E8180B /* main.h */; };
 		7E0C22411E2636CF00E8180B /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21FD1E2636CF00E8180B /* network.c */; };
 		7E0C22421E2636CF00E8180B /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21FD1E2636CF00E8180B /* network.c */; };
 		7E0C22431E2636CF00E8180B /* network.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FE1E2636CF00E8180B /* network.h */; };
