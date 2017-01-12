@@ -40,7 +40,7 @@
 		7E0C222F1E2636CF00E8180B /* hashmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F01E2636CF00E8180B /* hashmap.h */; };
 		7E0C22301E2636CF00E8180B /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F11E2636CF00E8180B /* heap.c */; };
 		7E0C22311E2636CF00E8180B /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F11E2636CF00E8180B /* heap.c */; };
-		7E0C22321E2636CF00E8180B /* heap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F21E2636CF00E8180B /* heap.h */; };
+		7E0C22321E2636CF00E8180B /* heap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F21E2636CF00E8180B /* heap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E0C22331E2636CF00E8180B /* html-error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F31E2636CF00E8180B /* html-error.c */; };
 		7E0C22341E2636CF00E8180B /* html-error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F31E2636CF00E8180B /* html-error.c */; };
 		7E0C22351E2636CF00E8180B /* html-error.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F41E2636CF00E8180B /* html-error.h */; };
@@ -52,7 +52,7 @@
 		7E0C223B1E2636CF00E8180B /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21F81E2636CF00E8180B /* log.h */; };
 		7E0C223C1E2636CF00E8180B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F91E2636CF00E8180B /* main.c */; };
 		7E0C223D1E2636CF00E8180B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21F91E2636CF00E8180B /* main.c */; };
-		7E0C223E1E2636CF00E8180B /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FA1E2636CF00E8180B /* main.h */; };
+		7E0C223E1E2636CF00E8180B /* main.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FA1E2636CF00E8180B /* main.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E0C22411E2636CF00E8180B /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21FD1E2636CF00E8180B /* network.c */; };
 		7E0C22421E2636CF00E8180B /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C21FD1E2636CF00E8180B /* network.c */; };
 		7E0C22431E2636CF00E8180B /* network.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C21FE1E2636CF00E8180B /* network.h */; };
@@ -85,9 +85,10 @@
 		7E0C225E1E2636CF00E8180B /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E0C22101E2636CF00E8180B /* vector.h */; };
 		7E0C22641E263DF500E8180B /* tinyproxy-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C22621E263DF500E8180B /* tinyproxy-ios-Info.plist */; };
 		7E0C22651E263DF500E8180B /* tinyproxy.conf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C22631E263DF500E8180B /* tinyproxy.conf */; };
-		7E0C22661E263EE000E8180B /* tinyproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* tinyproxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EED6EEB1E26309600B50C75 /* tinyproxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EEA1E26309600B50C75 /* tinyproxy.m */; };
-		7EED6EEC1E26309600B50C75 /* tinyproxy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* tinyproxy.h */; };
+		7E0C22661E263EE000E8180B /* TinyProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* TinyProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E4365431E272F3D009BE963 /* TinyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EEA1E26309600B50C75 /* TinyProxy.m */; };
+		7EED6EEB1E26309600B50C75 /* TinyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EEA1E26309600B50C75 /* TinyProxy.m */; };
+		7EED6EEC1E26309600B50C75 /* TinyProxy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* TinyProxy.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,7 +98,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				7EED6EEC1E26309600B50C75 /* tinyproxy.h in CopyFiles */,
+				7EED6EEC1E26309600B50C75 /* TinyProxy.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +162,8 @@
 		7E0C22621E263DF500E8180B /* tinyproxy-ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tinyproxy-ios-Info.plist"; sourceTree = "<group>"; };
 		7E0C22631E263DF500E8180B /* tinyproxy.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tinyproxy.conf; sourceTree = "<group>"; };
 		7EED6EE61E26309600B50C75 /* libtinyproxy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyproxy.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EED6EE91E26309600B50C75 /* tinyproxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyproxy.h; sourceTree = "<group>"; };
-		7EED6EEA1E26309600B50C75 /* tinyproxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tinyproxy.m; sourceTree = "<group>"; };
+		7EED6EE91E26309600B50C75 /* TinyProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyProxy.h; sourceTree = "<group>"; };
+		7EED6EEA1E26309600B50C75 /* TinyProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyProxy.m; sourceTree = "<group>"; };
 		7EED6F901E2631BF00B50C75 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,8 +277,8 @@
 				7E0C22611E263D6800E8180B /* Supporting Files (iOS) */,
 				7E0C21DB1E2636CF00E8180B /* core */,
 				7EED6F901E2631BF00B50C75 /* config.h */,
-				7EED6EE91E26309600B50C75 /* tinyproxy.h */,
-				7EED6EEA1E26309600B50C75 /* tinyproxy.m */,
+				7EED6EE91E26309600B50C75 /* TinyProxy.h */,
+				7EED6EEA1E26309600B50C75 /* TinyProxy.m */,
 			);
 			path = tinyproxy;
 			sourceTree = "<group>";
@@ -289,8 +290,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0C22661E263EE000E8180B /* tinyproxy.h in Headers */,
+				7E0C22661E263EE000E8180B /* TinyProxy.h in Headers */,
 				7E0C22321E2636CF00E8180B /* heap.h in Headers */,
+				7E0C223E1E2636CF00E8180B /* main.h in Headers */,
 				7E0C22191E2636CF00E8180B /* buffer.h in Headers */,
 				7E0C225B1E2636CF00E8180B /* utils.h in Headers */,
 				7E0C22551E2636CF00E8180B /* transparent-proxy.h in Headers */,
@@ -305,7 +307,6 @@
 				7E0C222C1E2636CF00E8180B /* filter.h in Headers */,
 				7E0C22431E2636CF00E8180B /* network.h in Headers */,
 				7E0C22291E2636CF00E8180B /* daemon.h in Headers */,
-				7E0C223E1E2636CF00E8180B /* main.h in Headers */,
 				7E0C22381E2636CF00E8180B /* http-message.h in Headers */,
 				7E0C22461E2636CF00E8180B /* reqs.h in Headers */,
 				7E0C22351E2636CF00E8180B /* html-error.h in Headers */,
@@ -411,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4365431E272F3D009BE963 /* TinyProxy.m in Sources */,
 				7E0C222E1E2636CF00E8180B /* hashmap.c in Sources */,
 				7E0C221F1E2636CF00E8180B /* conf.c in Sources */,
 				7E0C22571E2636CF00E8180B /* upstream.c in Sources */,
@@ -458,7 +460,7 @@
 				7E0C22531E2636CF00E8180B /* transparent-proxy.c in Sources */,
 				7E0C22331E2636CF00E8180B /* html-error.c in Sources */,
 				7E0C22361E2636CF00E8180B /* http-message.c in Sources */,
-				7EED6EEB1E26309600B50C75 /* tinyproxy.m in Sources */,
+				7EED6EEB1E26309600B50C75 /* TinyProxy.m in Sources */,
 				7E0C22211E2636CF00E8180B /* connect-ports.c in Sources */,
 				7E0C22441E2636CF00E8180B /* reqs.c in Sources */,
 				7E0C223C1E2636CF00E8180B /* main.c in Sources */,
@@ -643,6 +645,7 @@
 				7E0C21A41E26362F00E8180B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EED6EE11E26309600B50C75 /* Build configuration list for PBXProject "tinyproxy" */ = {
 			isa = XCConfigurationList;

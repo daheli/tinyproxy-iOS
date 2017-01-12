@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E0C22711E26426F00E8180B /* tinyproxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0C226F1E26426F00E8180B /* tinyproxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E4365451E2730D7009BE963 /* tinyproxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4365441E2730D7009BE963 /* tinyproxy.framework */; };
+		7E4365461E2730D7009BE963 /* tinyproxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4365441E2730D7009BE963 /* tinyproxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EED6EC81E262FD400B50C75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EC71E262FD400B50C75 /* main.m */; };
 		7EED6ECB1E262FD400B50C75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6ECA1E262FD400B50C75 /* AppDelegate.m */; };
 		7EED6ECE1E262FD400B50C75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6ECD1E262FD400B50C75 /* ViewController.m */; };
@@ -23,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7E0C22711E26426F00E8180B /* tinyproxy.framework in Embed Frameworks */,
+				7E4365461E2730D7009BE963 /* tinyproxy.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7E0C226F1E26426F00E8180B /* tinyproxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = tinyproxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4365441E2730D7009BE963 /* tinyproxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = tinyproxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EED6EC31E262FD400B50C75 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EED6EC71E262FD400B50C75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EED6EC91E262FD400B50C75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4365451E2730D7009BE963 /* tinyproxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +101,7 @@
 		7EED6F971E26327100B50C75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E0C226F1E26426F00E8180B /* tinyproxy.framework */,
+				7E4365441E2730D7009BE963 /* tinyproxy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -300,6 +302,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F596855BRX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.subao.Sample.demo;
@@ -312,6 +318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F596855BRX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.subao.Sample.demo;

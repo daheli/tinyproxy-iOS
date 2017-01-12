@@ -6,14 +6,12 @@
 //  Copyright © 2017年 lidahe. All rights reserved.
 //
 
-#import "tinyproxy.h"
+#import "TinyProxy.h"
 #import "main.h"
 
 
 int tinyproxy_main() {
-#ifndef NDEBUG
-        fprintf(stderr, "tinyproxy_main... \n");
-#endif
+    fprintf(stderr, "tinyproxy_main... \n");
     return tp_main(1, NULL);
 }
 
