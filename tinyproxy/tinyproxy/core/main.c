@@ -323,7 +323,12 @@ static void initialize_config_defaults (struct config_s *conf)
 {
         memset (conf, 0, sizeof(*conf));
 
-        conf->config_file = safestrdup (SYSCONF);
+    char logf_buf[1024] = {0};
+    snprintf(logf_buf, sizeof(logf_buf), "%s%s", TINYPROXY_BASE_DIR, "/tinyproxy.log");
+    char pidf_buf[1024] = {0};
+    snprintf(pidf_buf, sizeof(pidf_buf), "%s%s", TINYPROXY_BASE_DIR, "/run.log");
+    
+        conf->config_file = safestrdup (TINYPROXY_SYSCONF);
         if (!conf->config_file) {
                 fprintf (stderr, PACKAGE ": Could not allocate memory.\n");
                 exit (EX_SOFTWARE);
@@ -336,8 +341,8 @@ static void initialize_config_defaults (struct config_s *conf)
         conf->errorpages = NULL;
         conf->stathost = safestrdup (TINYPROXY_STATHOST);
         conf->idletimeout = MAX_IDLE_TIME;
-        conf->logf_name = safestrdup (LOCALSTATE_LOG);
-        conf->pidpath = safestrdup (LOCALSTATE_RUN);
+        conf->logf_name = safestrdup (&logf_buf[0]);
+        conf->pidpath = safestrdup (&pidf_buf[0]);
 }
 
 /**

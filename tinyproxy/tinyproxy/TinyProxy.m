@@ -9,9 +9,8 @@
 #import "TinyProxy.h"
 #import "main.h"
 
-char *SYSCONF;
-char *LOCALSTATE_LOG;
-char *LOCALSTATE_RUN;
+char *TINYPROXY_SYSCONF;
+char *TINYPROXY_BASE_DIR;
 //TARGET_OS_IOS
 
 int tinyproxy_main() {
@@ -23,6 +22,8 @@ int tinyproxy_main() {
 @implementation TinyProxy
 
 + (void)start {
+//    dispatch_queue_t queue_t = dispatch_queue_create([@"TinyProxy" UTF8String], DISPATCH_QUEUE_SERIAL);
+//    dispatch_async(queue_t, ^{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self config];
         tp_main(1, "");
@@ -38,15 +39,11 @@ int tinyproxy_main() {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *dir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *baseDir = [dir stringByAppendingPathComponent:@"/tinyproxy"];
-    NSString *logDir = [baseDir stringByAppendingPathComponent:@"/log"];
-    [fileManager createDirectoryAtPath:logDir withIntermediateDirectories:YES attributes:nil error:nil];
-    NSString *logFile = [baseDir stringByAppendingPathComponent:@"/tinyproxy.log"];
-    NSString *runFile = [baseDir stringByAppendingPathComponent:@"/run.pid"];
+    [fileManager createDirectoryAtPath:baseDir withIntermediateDirectories:YES attributes:nil error:nil];
     NSLog(@"baseDir:%@", baseDir);
     
-    SYSCONF = [confFile UTF8String];
-    LOCALSTATE_LOG = [logFile UTF8String];
-    LOCALSTATE_RUN = [runFile UTF8String];
+    TINYPROXY_SYSCONF = [confFile UTF8String];    
+    TINYPROXY_BASE_DIR = [baseDir UTF8String];
 }
 
 @end

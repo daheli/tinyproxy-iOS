@@ -75,7 +75,9 @@ static int lock_fd = -1;
 
 static void _child_lock_init (void)
 {
-        char lock_file[] = "/tmp/tinyproxy.servers.lock.XXXXXX";
+//        char lock_file[] = "/tmp/tinyproxy.servers.lock.XXXXXX";
+    char lock_file[1024] = {0};
+    snprintf(lock_file, sizeof(lock_file), "%s%s", TINYPROXY_BASE_DIR, "/tinyproxy.servers.lock.XXXXXX");
 
         /* Only allow u+rw bits. This may be required for some versions
          * of glibc so that mkstemp() doesn't make us vulnerable.
@@ -273,7 +275,7 @@ static void child_main (struct child_s *ptr)
                  * We have a socket that is readable.
                  * Continue handling this connection.
                  */
-                SERVER_INC ();
+            
                 connfd = accept (listenfd, cliaddr, &clilen);
             
 #ifndef NDEBUG
@@ -304,7 +306,6 @@ static void child_main (struct child_s *ptr)
 
                 ptr->status = T_CONNECTED;
 
-                printf(stderr, "%s", servers_waiting);
                 SERVER_DEC ();
 
                 handle_connection (connfd);
@@ -436,25 +437,25 @@ short int child_pool_create (void)
                 child_ptr[i].connects = 0;
         }
 
-        for (i = 0; i != child_config.startservers; i++) {
-                DEBUG2 ("Trying to create child %d of %d", i + 1,
-                        child_config.startservers);
-                child_ptr[i].status = T_WAITING;
-                child_ptr[i].tid = child_make (&child_ptr[i]);
-
-                if (child_ptr[i].tid < 0) {
-                        log_message (LOG_WARNING,
-                                     "Could not create child number %d of %d",
-                                     i, child_config.startservers);
-                        return -1;
-                } else {
-                        log_message (LOG_INFO,
-                                     "Creating child number %d of %d ...",
-                                     i + 1, child_config.startservers);
-
-                        SERVER_INC ();
-                }
-        }
+//        for (i = 0; i != child_config.startservers; i++) {
+//                DEBUG2 ("Trying to create child %d of %d", i + 1,
+//                        child_config.startservers);
+//                child_ptr[i].status = T_WAITING;
+//                child_ptr[i].tid = child_make (&child_ptr[i]);
+//
+//                if (child_ptr[i].tid < 0) {
+//                        log_message (LOG_WARNING,
+//                                     "Could not create child number %d of %d",
+//                                     i, child_config.startservers);
+//                        return -1;
+//                } else {
+//                        log_message (LOG_INFO,
+//                                     "Creating child number %d of %d ...",
+//                                     i + 1, child_config.startservers);
+//
+//                        SERVER_INC ();
+//                }
+//        }
 
         log_message (LOG_INFO, "Finished creating all children.");
 
@@ -486,6 +487,8 @@ void child_main_loop (void)
 
                         for (i = 0; i != child_config.maxclients; i++) {
                                 if (child_ptr[i].status == T_EMPTY) {
+                                    SERVER_INC ();
+                                    
                                         child_ptr[i].status = T_WAITING;
                                         child_ptr[i].tid =
                                             child_make (&child_ptr[i]);
@@ -497,7 +500,7 @@ void child_main_loop (void)
                                                 break;
                                         }
 
-                                        SERVER_INC ();
+                                    
 
                                         break;
                                 }

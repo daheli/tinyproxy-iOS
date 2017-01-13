@@ -109,10 +109,14 @@ void *malloc_shared_memory (size_t size)
 {
         int fd;
         void *ptr;
-        char buffer[32];
+        char buffer[1024];
 
-        static const char *shared_file = "/tmp/tinyproxy.shared.XXXXXX";
-
+//        static const char *shared_file = "/tmp/tinyproxy.shared.XXXXXX";
+    
+        char new_buf[1024] = {0};
+        snprintf(new_buf, sizeof(new_buf), "%s%s", TINYPROXY_BASE_DIR, "/tinyproxy.shared.XXXXXX");
+        char *shared_file = &new_buf[0];
+    
         assert (size > 0);
 
         strlcpy (buffer, shared_file, sizeof (buffer));
