@@ -31,6 +31,7 @@
 #include "sock.h"
 #include "utils.h"
 #include "conf.h"
+#include <pthread.h>
 
 static vector_t listen_fds;
 
@@ -262,8 +263,9 @@ static void child_main (struct child_s *ptr)
                                     "fds was readable after select");
                         continue;
                 }
-
+//                ret = socket_nonblocking(listenfd);
                 ret = socket_blocking(listenfd);
+            
                 if (ret != 0) {
                         log_message(LOG_ERR, "Failed to set listening "
                                     "socket %d to blocking for accept: %s",
@@ -371,8 +373,13 @@ static pid_t child_make (struct child_s *ptr)
         set_signal_handler (SIGTERM, SIG_DFL);
         set_signal_handler (SIGHUP, child_sighup_handler);
 
-        child_main (ptr);       /* never returns */
-        return -1;
+    pthread_t thread1;
+    void *ret;
+    pthread_create(&thread1, NULL , child_main , (void*) ptr);
+//    pthread_join( thread1, &ret);
+    
+//        child_main (ptr);       /* never returns */
+        return 1;
 }
 
 /*

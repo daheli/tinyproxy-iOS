@@ -42,7 +42,7 @@ int tinyproxy_main() {
     [fileManager createDirectoryAtPath:baseDir withIntermediateDirectories:YES attributes:nil error:nil];
     NSLog(@"baseDir:%@", baseDir);
     
-    TINYPROXY_SYSCONF = [confFile UTF8String];    
+    TINYPROXY_SYSCONF = [confFile UTF8String];
     TINYPROXY_BASE_DIR = [baseDir UTF8String];
 }
 
