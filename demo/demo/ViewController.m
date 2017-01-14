@@ -32,12 +32,28 @@ exit(-1);
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [self makeListen];
+    });
     
-//    [self test];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self requestBD];
+    });
+        
     [TinyProxy start];
+    
 }
 
-- (int)test {
+- (void)requestBD {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+        NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:28888"];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        NSLog(@"url data:%@", data);
+    });
+}
+
+- (int)makeListen {
     printf("Hello, World!\n");
     int fd = socket(AF_INET, SOCK_STREAM, 0);
     
@@ -46,14 +62,13 @@ exit(-1);
         return -1;
     }
     
-    int ret = fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK );
+    int ret = fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK );    
     if(ret <0) {
         Log("set sock no-block failed, err:%d", errno);
         return -1;
     }
     int on = 1;
-    socklen_t l = sizeof(on);
-    ret = setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, l);
+    ret = setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
     if(ret <0) {
         Log("set sock addr reuse failed, err:%d", errno);
         return -1;
@@ -61,7 +76,7 @@ exit(-1);
     
     struct sockaddr_in si;
     si.sin_family = AF_INET;
-    si.sin_port = htons(7777);
+    si.sin_port = htons(17777);
     si.sin_addr.s_addr = inet_addr("0.0.0.0");
     socklen_t sl = sizeof(si);
     
@@ -71,7 +86,7 @@ exit(-1);
         return -1;
     }
     
-    listen(fd, 128);
+    listen(fd, 1024);
     
     while(1) {
         struct sockaddr_in peer;
