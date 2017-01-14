@@ -263,8 +263,8 @@ static void child_main (struct child_s *ptr)
                                     "fds was readable after select");
                         continue;
                 }
-//                ret = socket_nonblocking(listenfd);
-                ret = socket_blocking(listenfd);
+                ret = socket_nonblocking(listenfd);
+//                ret = socket_blocking(listenfd);
             
                 if (ret != 0) {
                         log_message(LOG_ERR, "Failed to set listening "

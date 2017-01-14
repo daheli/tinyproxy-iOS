@@ -173,11 +173,11 @@ static int listen_on_ios_socket(struct addrinfo *ad) {
         return -1;
     }
     
-    struct sockaddr_in si;
-    si.sin_family = AF_INET;
-    si.sin_port = htons(config.port);
-    si.sin_addr.s_addr = inet_addr("0.0.0.0");
-    socklen_t sl = sizeof(si);
+    struct sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(config.port);
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    
     ret = setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
     if (ret != 0) {
         log_message(LOG_ERR,
@@ -187,7 +187,7 @@ static int listen_on_ios_socket(struct addrinfo *ad) {
         return -1;
     }
     
-    ret = bind(listenfd, (struct sockaddr*)&si, sl);
+    ret = bind(listenfd, (struct sockaddr*)&addr, sizeof(addr));
     
     if (ret != 0) {
         log_message(LOG_ERR, "bind failed: %s", strerror (errno));
