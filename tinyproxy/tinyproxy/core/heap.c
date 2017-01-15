@@ -26,6 +26,11 @@
 #include "main.h"
 #include "heap.h"
 #include "text.h"
+#include "malloc.h"
+
+#if ONLY_MSPACES
+    mspace pool;
+#endif
 
 #ifndef NDEBUG
 
@@ -37,7 +42,11 @@ void *debugging_calloc (size_t nmemb, size_t size, const char *file,
         assert (nmemb > 0);
         assert (size > 0);
 
+#if ONLY_MSPACES
+        ptr = mspace_calloc(pool, nmemb, size);
+#else
         ptr = calloc (nmemb, size);
+#endif
         fprintf (stderr, "{calloc: %p:%lu x %lu} %s:%lu\n", ptr,
                  (unsigned long) nmemb, (unsigned long) size, file, line);
         return ptr;
@@ -49,7 +58,11 @@ void *debugging_malloc (size_t size, const char *file, unsigned long line)
 
         assert (size > 0);
 
+#if ONLY_MSPACES
+        ptr = mspace_malloc(pool, size);
+#else
         ptr = malloc (size);
+#endif
         fprintf (stderr, "{malloc: %p:%lu} %s:%lu\n", ptr,
                  (unsigned long) size, file, line);
         return ptr;
@@ -62,7 +75,11 @@ void *debugging_realloc (void *ptr, size_t size, const char *file,
 
         assert (size > 0);
 
+#if ONLY_MSPACES
+        newptr = mspace_realloc(pool, ptr, size);
+#else
         newptr = realloc (ptr, size);
+#endif
         fprintf (stderr, "{realloc: %p -> %p:%lu} %s:%lu\n", ptr, newptr,
                  (unsigned long) size, file, line);
         return newptr;
@@ -73,7 +90,11 @@ void debugging_free (void *ptr, const char *file, unsigned long line)
         fprintf (stderr, "{free: %p} %s:%lu\n", ptr, file, line);
 
         if (ptr != NULL)
-                free (ptr);
+#if ONLY_MSPACES
+            mspace_free(pool, ptr);
+#else
+            free (ptr);
+#endif
         return;
 }
 
@@ -85,7 +106,11 @@ char *debugging_strdup (const char *s, const char *file, unsigned long line)
         assert (s != NULL);
 
         len = strlen (s) + 1;
+#if ONLY_MSPACES
+        ptr = (char *) mspace_malloc (pool, len);
+#else
         ptr = (char *) malloc (len);
+#endif
         if (!ptr)
                 return NULL;
         memcpy (ptr, s, len);
@@ -159,3 +184,38 @@ void *calloc_shared_memory (size_t nmemb, size_t size)
 
         return ptr;
 }
+
+#if ONLY_MSPACES
+int allocator_init(size_t max_size) {
+    int fd;
+    void *ptr;
+    char unique_path[1024] = {0};
+    snprintf(unique_path, 1024, "%s%s", TINYPROXY_BASE_DIR, "/tinyproxy.malloc.XXXXXX");
+    
+    if ((fd = mkstemp (unique_path)) == -1)
+        return MAP_FAILED;
+    unlink (unique_path);
+    
+    if (ftruncate (fd, max_size) == -1)
+        return MAP_FAILED;
+    ptr = mmap (NULL, max_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if(ptr == MAP_FAILED) {
+        fprintf (stderr, "map failed, err:%s", strerror(errno));
+        return -1;
+    }
+    
+    memset(ptr, 0, max_size);
+    pool = create_mspace_with_base(ptr, max_size, 0);
+    if(pool == NULL) {
+        fprintf(stderr, "create pool failed, size:%d", max_size);
+        return -1;
+    }
+    close(fd);
+    
+    return ptr == MAP_FAILED;;
+}
+#endif
+
+
+
+

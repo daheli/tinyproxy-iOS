@@ -370,6 +370,15 @@ done:
 int
 tp_main (int argc, char **argv)
 {
+
+#if ONLY_MSPACES
+    int allocator = allocator_init(20*1024*1024);
+    if(allocator != 0) {
+        fprintf (stderr, PACKAGE ": Could not allocate memory.\n");
+        return -1;
+    }
+#endif
+    
         /* Only allow u+rw bits. This may be required for some versions
          * of glibc so that mkstemp() doesn't make us vulnerable.
          */

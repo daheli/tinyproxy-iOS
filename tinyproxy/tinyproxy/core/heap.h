@@ -58,4 +58,7 @@ extern char *debugging_strdup (const char *s, const char *file,
 extern void *malloc_shared_memory (size_t size);
 extern void *calloc_shared_memory (size_t nmemb, size_t size);
 
+#if ONLY_MSPACES
+extern int allocator_init(size_t max_size);
+#endif
 #endif

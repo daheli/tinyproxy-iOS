@@ -87,6 +87,9 @@
 		7E0C22651E263DF500E8180B /* tinyproxy.conf in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C22631E263DF500E8180B /* tinyproxy.conf */; };
 		7E0C22661E263EE000E8180B /* TinyProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* TinyProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E4365431E272F3D009BE963 /* TinyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EEA1E26309600B50C75 /* TinyProxy.m */; };
+		7EDA077A1E2B5B8700D9B83E /* malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA07781E2B5B8700D9B83E /* malloc.c */; };
+		7EDA077B1E2B5B8700D9B83E /* malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA07781E2B5B8700D9B83E /* malloc.c */; };
+		7EDA077C1E2B5B8700D9B83E /* malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDA07791E2B5B8700D9B83E /* malloc.h */; };
 		7EED6EEB1E26309600B50C75 /* TinyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EED6EEA1E26309600B50C75 /* TinyProxy.m */; };
 		7EED6EEC1E26309600B50C75 /* TinyProxy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EED6EE91E26309600B50C75 /* TinyProxy.h */; };
 /* End PBXBuildFile section */
@@ -161,6 +164,8 @@
 		7E0C22101E2636CF00E8180B /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
 		7E0C22621E263DF500E8180B /* tinyproxy-ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tinyproxy-ios-Info.plist"; sourceTree = "<group>"; };
 		7E0C22631E263DF500E8180B /* tinyproxy.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tinyproxy.conf; sourceTree = "<group>"; };
+		7EDA07781E2B5B8700D9B83E /* malloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = malloc.c; sourceTree = "<group>"; };
+		7EDA07791E2B5B8700D9B83E /* malloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = malloc.h; sourceTree = "<group>"; };
 		7EED6EE61E26309600B50C75 /* libtinyproxy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtinyproxy.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EED6EE91E26309600B50C75 /* TinyProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyProxy.h; sourceTree = "<group>"; };
 		7EED6EEA1E26309600B50C75 /* TinyProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyProxy.m; sourceTree = "<group>"; };
@@ -254,6 +259,15 @@
 			name = "Supporting Files (iOS)";
 			sourceTree = "<group>";
 		};
+		7EDA07771E2B5B8700D9B83E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7EDA07791E2B5B8700D9B83E /* malloc.h */,
+				7EDA07781E2B5B8700D9B83E /* malloc.c */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		7EED6EDD1E26309600B50C75 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0C22611E263D6800E8180B /* Supporting Files (iOS) */,
+				7EDA07771E2B5B8700D9B83E /* utils */,
 				7E0C21DB1E2636CF00E8180B /* core */,
 				7EED6F901E2631BF00B50C75 /* config.h */,
 				7EED6EE91E26309600B50C75 /* TinyProxy.h */,
@@ -312,6 +327,7 @@
 				7E0C22351E2636CF00E8180B /* html-error.h in Headers */,
 				7E0C22261E2636CF00E8180B /* conns.h in Headers */,
 				7E0C22491E2636CF00E8180B /* reverse-proxy.h in Headers */,
+				7EDA077C1E2B5B8700D9B83E /* malloc.h in Headers */,
 				7E0C223B1E2636CF00E8180B /* log.h in Headers */,
 				7E0C224F1E2636CF00E8180B /* stats.h in Headers */,
 				7E0C224C1E2636CF00E8180B /* sock.h in Headers */,
@@ -417,6 +433,7 @@
 				7E0C221F1E2636CF00E8180B /* conf.c in Sources */,
 				7E0C22571E2636CF00E8180B /* upstream.c in Sources */,
 				7E0C22451E2636CF00E8180B /* reqs.c in Sources */,
+				7EDA077B1E2B5B8700D9B83E /* malloc.c in Sources */,
 				7E0C22221E2636CF00E8180B /* connect-ports.c in Sources */,
 				7E0C221B1E2636CF00E8180B /* child.c in Sources */,
 				7E0C22511E2636CF00E8180B /* text.c in Sources */,
@@ -450,6 +467,7 @@
 				7E0C22141E2636CF00E8180B /* anonymous.c in Sources */,
 				7E0C22301E2636CF00E8180B /* heap.c in Sources */,
 				7E0C22561E2636CF00E8180B /* upstream.c in Sources */,
+				7EDA077A1E2B5B8700D9B83E /* malloc.c in Sources */,
 				7E0C22241E2636CF00E8180B /* conns.c in Sources */,
 				7E0C221A1E2636CF00E8180B /* child.c in Sources */,
 				7E0C22471E2636CF00E8180B /* reverse-proxy.c in Sources */,
@@ -561,6 +579,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 					HAVE_CONFIG_H,
+					"ONLY_MSPACES=1",
+					"USE_LOCKS=1",
+					"USE_RECURSIVE_LOCKS=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -603,7 +624,12 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_CONFIG_H,
+					"ONLY_MSPACES=1",
+					"USE_LOCKS=1",
+					"USE_RECURSIVE_LOCKS=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
