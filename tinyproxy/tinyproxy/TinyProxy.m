@@ -9,10 +9,6 @@
 #import "TinyProxy.h"
 #import "main.h"
 
-char *TINYPROXY_SYSCONF;
-char *TINYPROXY_BASE_DIR;
-//TARGET_OS_IOS
-
 int tinyproxy_main() {
     fprintf(stderr, "tinyproxy_main... \n");
     return tp_main(1, NULL);

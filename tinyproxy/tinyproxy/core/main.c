@@ -50,6 +50,8 @@
 struct config_s config;
 struct config_s config_defaults;
 unsigned int received_sighup = FALSE;   /* boolean */
+char *TINYPROXY_SYSCONF;
+char *TINYPROXY_BASE_DIR;
 
 /*
  * Handle a signal
